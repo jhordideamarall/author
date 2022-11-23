@@ -5,7 +5,7 @@ $curl = curl_init();
 $curl = curl_init();
 
 curl_setopt_array($curl, [
-	CURLOPT_URL => "https://domain-da-pa-check.p.rapidapi.com/?target=www.google.com",
+	CURLOPT_URL => "https://domain-da-pa-check.p.rapidapi.com/?target=www.garuda.website",
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_FOLLOWLOCATION => true,
 	CURLOPT_ENCODING => "",
@@ -24,9 +24,10 @@ $err = curl_error($curl);
 
 curl_close($curl);
 
-$data = json_encode($response, true);
+$data = json_decode($response, true);
+var_dump ($data);
 
-$webname = $response['body'][0]['target'];
+$webname = $data[1]['body']['0']['target'];
 
 
 ?>
@@ -77,7 +78,7 @@ $webname = $response['body'][0]['target'];
         <hr>
         <tbody>
           <tr>
-            <th><?= $webname ?></th>
+            <th><?= $webname; ?></th>
             <td></td>
             <td>100</td>
             <td>1457468211</td>
