@@ -10,3 +10,13 @@
   }
 }
   
+{ ["result"]=> string(7) "success"
+    ["body"]=> array(6) 
+    { ["target"]=> string(18) "www.garuda.website" 
+      ["title"]=> string(48) "Web Developer Jakarta Indonesia - Garuda Website" 
+      ["da_score"]=> int(31) 
+      ["pa_score"]=> int(42) 
+      ["total_backlink"]=> int(58784) 
+      ["spam_score"]=> int(1) 
+      
+      } }
