@@ -2,8 +2,10 @@
 
 $curl = curl_init();
 
+$curl = curl_init();
+
 curl_setopt_array($curl, [
-	CURLOPT_URL => "https://domain-da-pa-check.p.rapidapi.com/?target=www.retina.web.id",
+	CURLOPT_URL => "https://domain-da-pa-check.p.rapidapi.com/?target=www.google.com",
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_FOLLOWLOCATION => true,
 	CURLOPT_ENCODING => "",
@@ -13,7 +15,7 @@ curl_setopt_array($curl, [
 	CURLOPT_CUSTOMREQUEST => "GET",
 	CURLOPT_HTTPHEADER => [
 		"X-RapidAPI-Host: domain-da-pa-check.p.rapidapi.com",
-		"X-RapidAPI-Key: afbbb6ebc1mshe88e0009447e124p146c1ejsn1a4350fce864"
+		"X-RapidAPI-Key: 1a0615ebf3msh1076b75bd089cd4p17eaa7jsn42cc1862836f"
 	],
 ]);
 
@@ -22,8 +24,9 @@ $err = curl_error($curl);
 
 curl_close($curl);
 
-$data = json_encode($response);
-echo $response;
+$data = json_encode($response, true);
+
+$webname = $response['body'][0]['target'];
 
 
 ?>
@@ -74,7 +77,7 @@ echo $response;
         <hr>
         <tbody>
           <tr>
-            <th></th>
+            <th><?= $webname ?></th>
             <td></td>
             <td>100</td>
             <td>1457468211</td>
